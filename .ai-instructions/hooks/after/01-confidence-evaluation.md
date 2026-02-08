@@ -1,0 +1,1 @@
+Evaluate confidence and failure conditions before continuing work.
