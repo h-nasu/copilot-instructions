@@ -39,3 +39,53 @@ unless explicitly stated.
 
 - Project documentation is client- or team-facing
 - `.ai-instructions/documents/` is AI internal
+
+---
+
+## Client-Side Documentation Rules
+
+Copilot MUST automatically generate and maintain client-side documentation when implementing or modifying client-facing features.
+
+### Documentation Requirements
+
+- Copilot MUST create documentation for:
+  - UI components
+  - API integrations
+  - State management logic
+  - Environment setup
+  - Deployment procedures
+  - Client configuration
+
+- Copilot MUST organize documentation inside a structured directory.
+
+### Directory Structure
+
+Client-side documentation MUST be placed under:
+
+docs/
+
+Copilot MUST automatically create missing subdirectories when needed.
+
+Recommended structure:
+
+docs/
+├── overview.md
+├── specifications/
+│   ├── architecture.md
+│   ├── setup.md
+│   └── deployment.md
+├── api/
+│   └── endpoints.md
+├── components/
+│   └── <component-name>.md
+└── state/
+    └── state-management.md
+
+### Strict Restrictions
+
+- Copilot MUST NEVER generate, move, or modify files inside:
+
+  client-requirement/
+
+- The `client-requirement/` directory is reserved strictly for raw client-provided materials.
+- Copilot MUST treat `client-requirement/` as read-only.

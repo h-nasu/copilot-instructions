@@ -5,6 +5,7 @@ These rules apply by default.
 Rules may be added or overridden by creating indexed files under `specs/`.
 
 Example:
+- specs/00-ground-policy.md
 - specs/01-project.md
 - specs/02-feature-x.md
 

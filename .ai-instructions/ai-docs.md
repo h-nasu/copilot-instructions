@@ -84,5 +84,5 @@ Purpose:
 ### 08-issues/
 
 Purpose:
-- Record issues encountered
+- Record bugs and issues encountered
 - Document countermeasures and lessons learned
