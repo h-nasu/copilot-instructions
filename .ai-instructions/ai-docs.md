@@ -46,6 +46,7 @@ Purpose:
 Purpose:
 - Define architecture and implementation details
 - File structure, class design, data flow
+- Always include Technology Stacks for the project
 
 ---
 
