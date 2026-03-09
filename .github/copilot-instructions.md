@@ -1,20 +1,205 @@
-Follow all AI rules defined in:
-.ai-instructions/overview.md
+# AI Workflow Rules — MANDATORY
 
-Apply all referenced instruction files transitively.
+## ⚠️ CRITICAL: Before ANY task, you MUST:
+1. READ all files in `.ai-instructions/` in index order (overview.md → specs.md → specs/ → hooks/ → workflows/)
+2. CONFIRM you have read them by listing what you found
+3. ONLY THEN proceed
 
-Do not create new AI instruction directories.
+## ⚠️ CRITICAL: Task Completion Requires ALL of:
+- Code updated and tested without errors
+- Documentation created/updated per project-docs.md rules
+- A task is NOT complete until documentation is done
+
+## Instruction Load Order (ALWAYS follow this):
+1. .ai-instructions/overview.md
+2. .ai-instructions/specs.md
+3. .ai-instructions/specs/ (by index)
+4. .ai-instructions/hooks/before/ (by index)
+5. .ai-instructions/workflows/ (by index)
+6. .ai-instructions/hooks/after/ (by index)
 
 ---
 
-All code changes REQUIRE documentation updates if the repository rules define them.
+# AI Collaboration Ground Rules
 
-A task is NOT complete until:
-- Code is updated
-- Code is tested and verified without errors
-- Required documentation is created or modified
+> **Purpose**: Maximize efficiency and minimize query usage for GitHub Copilot Premium
+> **MANDATORY**: Read and follow this document for EVERY task
 
-Before finishing, verify documentation compliance.
+**Target**: GitHub Copilot, Claude Code, and all AI assistants
 
-If documentation is required and not created,
-the task is incomplete.
+---
+
+## 📋 Background & Critical Problems
+
+### Past Issues That Wasted Premium Queries
+
+1. ❌ **Repeated mistakes** - Same errors occurred even after corrections
+2. ❌ **No instruction documents** - Patterns and rules were not documented
+3. ❌ **Poor documentation management** - Documentation created as afterthought
+4. ❌ **Duplicate documents** - Created without checking for existing ones
+5. ❌ **Manual verification required** - Documentation review left to user after coding
+6. ❌ **No automatic test generation** - Tests added later, requiring extra commands
+7. ❌ **Lack of context management** - Partial responses without understanding full context
+
+### Goal: MINIMIZE QUERIES, MAXIMIZE RESULTS
+
+- ✅ **Understand instructions the first time, NEVER repeat mistakes**
+- ✅ **Automatically generate documentation and tests WITHOUT asking**
+- ✅ **Proactively execute standard tasks**
+- ✅ **Maintain context at all times**
+
+---
+
+## 🎯 Core Principles
+
+### 1. Documentation & Context Management
+
+#### ✅ MANDATORY Actions
+
+| Timing | Action | Reason |
+|--------|--------|--------|
+| **Any project changed** | Update documentation | Keep design in sync |
+
+#### ❌ FORBIDDEN Actions
+
+- ❌ Create new docs without checking existing ones
+- ❌ Ask user "Should I create documentation?" (DO IT AUTOMATICALLY)
+- ❌ Say "Please verify the documentation" after coding (VERIFY IT YOURSELF)
+
+---
+
+### 2. Coding Tasks - COMPLETE AUTOMATION REQUIRED
+
+#### ❌ FORBIDDEN Actions
+
+- ❌ Ask "Should I run lint?" (RUN AUTOMATICALLY)
+- ❌ Say "Documentation needs updating" and stop (UPDATE IT YOURSELF)
+- ❌ Move to next task with TypeScript/lint errors
+- ❌ Make user manually create commit messages
+- ❌ Leave compile/lint errors unresolved
+- ❌ Leave implementation half-done
+
+---
+
+### 3. Decision Making - IMPLEMENT FIRST, ASK LATER
+
+#### ✅ Recommended Flow
+
+```
+When user decision is needed:
+└─> 1. Implement best practice solution FIRST
+    2. After completion, present options with reasoning
+    3. If user wants changes, then modify
+
+Example:
+"For camera grid layout, both CSS Grid and Flexbox are options.
+ I implemented CSS Grid as it provides better responsive control.
+ If you prefer Flexbox, please let me know and I'll switch."
+```
+
+#### ❌ Inefficient Flow (FORBIDDEN)
+
+```
+❌ Ask question → Wait for answer → Implement → Complete
+
+Reason: Turns 1 query into 2-3 queries
+```
+
+---
+
+### 4. Error & Bug Handling
+
+#### ✅ Error Response Procedure
+
+| Step | Content | Purpose |
+|------|---------|---------|
+| **1. Analyze error** | Check logs/error messages | Identify root cause |
+| **2. Check known patterns** | Search `documents/08-issues/*.md` | Apply known solutions |
+| **3. Implement fix** | Fix code + Add preventive measures | Prevent recurrence |
+| **4. Create instruction doc** | If new pattern, add to `specs/` | Enable auto-response next time |
+| **5. Verify** | Run lint + TypeScript check | Check impact scope |
+
+Put any bugs, issues and incident inside  `documents/08-issues/*.md`
+
+---
+
+## 📊 Query Reduction Goals
+
+### Target Metrics
+
+| Current Problem | Ideal State | Reduction Goal |
+|----------------|-------------|----------------|
+| Same mistake 3 queries | Fix in 1 query | **-66%** |
+| Doc creation 2 exchanges | Auto-create | **-50%** |
+| Test addition extra commands | Auto-generate | **-100%** |
+| Manual verification requests | Auto-verify | **-100%** |
+
+### Measurement Metric
+
+```
+Average queries per task
+= (Doc check + Implement + Verify + Fix) / Task count
+
+Target: ≤ 3 queries per task
+```
+
+---
+
+## 🎓 Learning & Improvement
+
+### Improvement Cycle
+
+```
+Task Execution → Pattern Discovery → Documentation → Next Time Automation → [Loop]
+```
+
+---
+
+## 🚫 ABSOLUTELY FORBIDDEN BEHAVIORS
+
+```
+❌ Asking "Should I...?" questions (DO IT AUTOMATICALLY)
+❌ Saying "Please verify documentation" (VERIFY IT YOURSELF)
+❌ Leaving TypeScript/ESLint or any errors unresolved
+❌ Creating new docs without checking existing
+❌ Leaving implementation incomplete
+❌ Forgetting to generate commit messages
+❌ Using 'any' type in TypeScript
+```
+
+---
+
+## 🚀 Expected Results
+
+### For User
+
+- ✅ Significant query reduction
+- ✅ No repeated explanations
+- ✅ Fast delivery of high-quality deliverables
+- ✅ Auto-synced documentation
+
+### For AI
+
+- ✅ Continuous context accumulation
+- ✅ Increased automation tasks
+- ✅ Error pattern learning
+- ✅ Improved proactive suggestion capability
+
+---
+
+## 🎯 SUMMARY: What AI MUST Do Every Time
+
+1. **CHECK** existing docs before creating new ones
+2. **IMPLEMENT** best solution first, ask later if needed
+3. **RUN** TypeScript + ESLint or any other necessary checks automatically
+4. **UPDATE** documentation automatically
+5. **GENERATE** commit message automatically
+6. **REPORT** completion with ALL details
+7. **NEVER ASK** "should I...?" - JUST DO IT
+8. **NEVER LEAVE** errors or incomplete work
+
+**If you're not sure, IMPLEMENT the best solution first, then ask.**
+
+---
+
+**Remember: Every query counts. Maximize value in each interaction.**
