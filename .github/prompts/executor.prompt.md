@@ -1,6 +1,5 @@
 ---
 agent: agent
-tools: ['read/readFile', 'search/listDirectory', 'edit/editFiles', 'execute/runInTerminal', 'search/fileSearch']
 description: 'Run this before any development task to enforce the full workflow'
 ---
 

@@ -1,6 +1,5 @@
 ---
 agent: agent
-tools: ['read/readFile', 'search/listDirectory', 'edit/editFiles', 'search/fileSearch', 'search/codebase']
 description: 'Transform specs into implementation-ready designs — no production code'
 ---
 

@@ -1,6 +1,5 @@
 ---
 agent: agent
-tools: ['read/readFile', 'search/listDirectory', 'edit/editFiles', 'execute/runInTerminal', 'read/problems', 'read/terminalLastCommand', 'search/codebase']
 description: 'Identify root causes of hard bugs and systemic failures'
 ---
 

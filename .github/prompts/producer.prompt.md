@@ -1,6 +1,5 @@
 ---
 agent: agent
-tools: ['read/readFile', 'search/listDirectory', 'edit/editFiles', 'search/fileSearch']
 description: 'Clarify requirements and create executable plans — no code or tests'
 ---
 
