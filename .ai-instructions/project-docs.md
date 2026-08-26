@@ -68,6 +68,7 @@ Copilot MUST automatically create missing subdirectories when needed.
 
 Recommended structure:
 
+```
 docs/
 ├── overview.md
 ├── specifications/
@@ -80,12 +81,13 @@ docs/
 │   └── <component-name>.md
 └── state/
     └── state-management.md
+```
 
 ### Strict Restrictions
 
 - Copilot MUST NEVER generate, move, or modify files inside:
 
-  client-requirement/
+  client-requirements/
 
-- The `client-requirement/` directory is reserved strictly for raw client-provided materials.
-- Copilot MUST treat `client-requirement/` as read-only.
+- The `client-requirements/` directory is reserved strictly for raw client-provided materials.
+- Copilot MUST treat `client-requirements/` as read-only.
